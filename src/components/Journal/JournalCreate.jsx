@@ -8,6 +8,10 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import Container from "@material-ui/core/Container";
 
+// import APIURL from '../../helpers/environment';
+
+let APIURL = 'https://ism-journal-server.herokuapp.com';
+
 const useStyles = makeStyles((theme) => ({
   input: {
     width: "90%",
@@ -33,13 +37,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const newDate = new Date();
-let defaultDate = newDate.toISOString().slice(0, 10);
+let current = newDate.toISOString().slice(0, 10);
 
 const JournalCreate = (props) => {
   const classes = useStyles();
 
   const [title, setTitle] = useState("");
-  const [date, setDate] = useState(defaultDate);
+  const [date, setDate] = useState(current);
   const [entry, setEntry] = useState("");
 
   const [open, setOpen] = useState(false);
@@ -57,7 +61,7 @@ const JournalCreate = (props) => {
     let newEntry = { journal: { title: title, date: date, entry: entry } };
     console.log(newEntry);
 
-    fetch("http://localhost:3000/journal/create", {
+    fetch(`${APIURL}/journal/create`, {
       method: "POST",
       headers: new Headers({
         "Content-Type": "application/json",

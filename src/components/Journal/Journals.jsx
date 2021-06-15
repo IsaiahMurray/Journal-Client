@@ -5,6 +5,10 @@ import Button from "@material-ui/core/Button";
 import Journal from "./Journal";
 import JournalCreate from "./JournalCreate";
 
+//import APIURL from '../../helpers/environment';
+
+let APIURL = 'https://ism-journal-server.herokuapp.com';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -25,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 const Journals = (props) => {
   const classes = useStyles();
   const [fetchUrl, setFetchUrl] = useState(
-    "http://localhost:3000/journal/mine"
+    `${APIURL}/journal/mine`
   );
 
   // useEffect(() => {
@@ -36,11 +40,11 @@ const Journals = (props) => {
 
   let buttonView;
 
-  if (fetchUrl === "http://localhost:3000/journal/mine") {
+  if (fetchUrl === `${APIURL}/journal/mine`) {
     buttonView = "";
   } else {
     buttonView = (
-      <Button onClick={setFetchUrl("http://localhost:3000/journal/mine")}>
+      <Button onClick={setFetchUrl(`${APIURL}/journal/mine`)}>
         All Journals
       </Button>
     );

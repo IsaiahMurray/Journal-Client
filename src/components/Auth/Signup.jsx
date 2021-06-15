@@ -4,6 +4,9 @@ import Button from "@material-ui/core/Button";
 import { Alert } from "@material-ui/lab";
 import Snackbar from '@material-ui/core/Snackbar';
 
+//import APIURL from '../../helpers/environment';
+
+let APIURL = 'https://ism-journal-server.herokuapp.com';
 
 const Signup = (props) => {
   const [email, setEmail] = useState("");
@@ -38,7 +41,7 @@ const Signup = (props) => {
     event.preventDefault();
     console.log("Signup button hit");
     try {
-      let res = await fetch(`http://localhost:3000/user/register`, {
+      let res = await fetch(`${APIURL}/user/register`, {
         method: "POST",
         body: JSON.stringify({ email: email, name: name, password: password }),
         headers: new Headers({

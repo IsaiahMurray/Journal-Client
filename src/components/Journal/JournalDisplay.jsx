@@ -2,10 +2,14 @@ import React, { useState, useEffect } from "react";
 import Journals from "./Journals";
 import JounalCreate from "./JournalCreate";
 
+//import APIURL from '../../helpers/environment';
+
+let APIURL = 'https://ism-journal-server.herokuapp.com';
+
 const JournalDisplay = (props) => {
   const [journalArray, setJournalArray] = useState([]);
   const [fetchUrl, setFetchUrl] = useState(
-    "http://localhost:3000/journal/practice"
+    "http://localhost:3000/journal/mine"
   );
 
   useEffect(() => {
@@ -19,7 +23,7 @@ const JournalDisplay = (props) => {
     console.log("Calling fetch");
     console.log(props.token);
     try{
-      let res = await fetch("http://localhost:3000/journal/practice", {
+      let res = await fetch(`${APIURL}/journal/mine`, {
         method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -27,32 +31,19 @@ const JournalDisplay = (props) => {
             }
       })
 
-    console.log("RESPONSE:", res); 
-
+      console.log(`RES: ${res}`);
       let data = await res.json();
-      console.log(`Data: ${data.message}`);
+      console.log(data);
+
+      setJournalArray(data.foundJournals);
 
     }catch(err){
       console.log(err);
     }
-
-    // fetch(fetchUrl, {
-    //   method: "GET",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Authorization: props.token,
-    //   },
-    // })
-    //   .then((res) => res.json())
-    //   .then((journalArray) => {
-    //     setJournalArray(journalArray);
-    //     console.log(journalArray);
-    //   })
-    //   .catch((err) => console.log(err));
   };
 
   const updateJournal = (postId, updateEntry) => {
-    fetch(`http://localhost:3000/journal/update/${postId}`, {
+    fetch(`${APIURL}/journal/update/${postId}`, {
       method: "PUT",
       body: JSON.stringify(updateEntry),
       headers: new Headers({
@@ -70,7 +61,7 @@ const JournalDisplay = (props) => {
   const deleteJournal = (postId) => {
     console.log('deleteJournal working')
     console.log(postId)
-    fetch(`http://localhost:3000/journal/delete/${postId}`, {
+    fetch(`${APIURL}/journal/delete/${postId}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
