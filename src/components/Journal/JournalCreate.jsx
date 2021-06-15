@@ -58,7 +58,7 @@ const JournalCreate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let newEntry = { journal: { title: title, date: date, entry: entry } };
+    let newEntry = { title: title, date: date, entry: entry };
     console.log(newEntry);
 
     fetch(`${APIURL}/journal/create`, {
