@@ -55,7 +55,7 @@ const JournalUpdate = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let journalEntry = {journal: {title: title, date: date, entry: entry}};
+    let journalEntry = {title: title, date: date, entry: entry};
     console.log(journalEntry);
     props.updateJournal(props.journal.id, journalEntry);
     handleClose();
