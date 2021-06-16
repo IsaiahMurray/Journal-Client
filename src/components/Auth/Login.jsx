@@ -3,12 +3,31 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Alert } from "@material-ui/lab";
 import Snackbar from '@material-ui/core/Snackbar';
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "90%",
+    height: "88%",
+    margin: "auto",
+    marginTop: '3%',
+  },
+  form:{
+    height: '90%',
+    paddingTop: '5%'
+  },
+  button: {
+    marginTop: '10%'
+  },
+}));
 
 // import APIURL from '../../helpers/environment';
 
 let APIURL = 'https://ism-journal-server.herokuapp.com';
 
 const Login = (props) => {
+  const classes = useStyles();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [open, setOpen] = useState(false);
@@ -84,13 +103,13 @@ const Login = (props) => {
     }
   };
   return (
-    <div>
+    <div className={classes.root}>
     <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
       <Alert onClose={handleClose} severity="error">
         {alert}
       </Alert>
     </Snackbar>
-      <form id="login-signup-form" onSubmit={handleSubmit}>
+      <form className={classes.form} id="login-signup-form" onSubmit={handleSubmit}>
         <br />
         <TextField
           variant="outlined"
@@ -117,6 +136,7 @@ const Login = (props) => {
         />
         <br />
         <Button
+        className={classes.button}
           id="login-signup-button"
           type="submit"
           variant="contained"

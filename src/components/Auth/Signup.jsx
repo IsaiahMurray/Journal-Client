@@ -2,13 +2,30 @@ import { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { Alert } from "@material-ui/lab";
-import Snackbar from '@material-ui/core/Snackbar';
+import Snackbar from "@material-ui/core/Snackbar";
+import { makeStyles } from "@material-ui/core/styles";
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "90%",
+    height: "88%",
+    margin: "auto",
+    marginTop: '3%'
+  },
+  form:{
+    height: '90%',
+    paddingTop: '5%'
+  },
+  button: {
+    marginTop: '10%'
+  },
+}));
 //import APIURL from '../../helpers/environment';
 
-let APIURL = 'https://ism-journal-server.herokuapp.com';
+let APIURL = "https://ism-journal-server.herokuapp.com";
 
 const Signup = (props) => {
+  const classes = useStyles();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -20,22 +37,22 @@ const Signup = (props) => {
   };
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
 
     setOpen(false);
-  }
+  };
 
   const setError = (err) => {
-    if(err === 409){
+    if (err === 409) {
       setErrMessage("Email in use. Try logging in.");
       setOpen(true);
-    } else if(err === 500){
+    } else if (err === 500) {
       setErrMessage("Something went wrog...");
       setOpen(true);
     }
-  }
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -69,19 +86,19 @@ const Signup = (props) => {
       window.alert("You're signed up!");
     } catch (error) {
       console.error("THIS IS THE ERROR", error);
-      handleOpen()
+      handleOpen();
       //window.alert("That email is already in use.. Try logging in!");
     }
   };
 
   return (
-    <div>
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-      <Alert onClose={handleClose} severity="error">
-        {errMessage}
-      </Alert>
-    </Snackbar>
-      <form id="login-signup-form" onSubmit={handleSubmit}>
+    <div className={classes.root}>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          {errMessage}
+        </Alert>
+      </Snackbar>
+      <form className={classes.form} id="login-signup-form" onSubmit={handleSubmit}>
         <TextField
           variant="outlined"
           margin="normal"
@@ -118,6 +135,7 @@ const Signup = (props) => {
         />
         <br />
         <Button
+          className={classes.button}
           id="login-signup-button"
           type="submit"
           variant="contained"

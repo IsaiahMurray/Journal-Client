@@ -43,7 +43,7 @@ const JournalDisplay = (props) => {
   };
 
   const updateJournal = (postId, updateEntry) => {
-    fetch(`${APIURL}/journal/update/${postId}`, {
+    fetch(`${APIURL}/journal/edit/${postId}`, {
       method: "PUT",
       body: JSON.stringify(updateEntry),
       headers: new Headers({
