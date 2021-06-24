@@ -9,9 +9,9 @@ function App() {
   const [sessionToken, setSessionToken] = useState(null); 
 
   useEffect(() => { 
-    // if(localStorage.getItem('token')){
-    //   setSessionToken(localStorage.getItem('token'));
-    // }
+    if(localStorage.getItem('token')){
+      setSessionToken(localStorage.getItem('token'));
+    }
     clearToken();
   }, [])
 
