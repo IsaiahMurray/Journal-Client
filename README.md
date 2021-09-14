@@ -25,4 +25,4 @@ The data pulls from a server deployed via heroku. You can view the cource code h
 
 ### Next Version?
 
-Is an app ever really complete? Not really! For the next version of this project I plan to implement full CRUD on the User table add sorting functinoality for the journals!
+Is an app ever really complete? Not really! For the next version of this project I plan to implement full CRUD on the User table add sorting functinoality for the journals. I also plan add the ability to toggle a light and dark mode.
