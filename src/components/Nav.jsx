@@ -5,14 +5,23 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   logout: {
-    
+    border: "1px solid white",
+    color: "white",
+    marginLeft: "70%"
   },
   title: {
-    flexGrow: 1,
+    marginLeft: "50px"
   },
   root: {
     flexGrow: 1,
+    width: "100%"
   },
+  toolbar: {
+    width: "100%"
+  },
+  appbar: {
+    width: "100%"
+  }
 }));
 
 const Nav = (props) => {

@@ -63,7 +63,6 @@ const Login = (props) => {
     console.log("Login button hit");
     try {
       let res = await fetch(`${APIURL}/user/login`, {
-        // mode: "no-cors",
         method: "POST",
         body: JSON.stringify({ email: email, password: password }),
         headers: new Headers({
@@ -87,10 +86,6 @@ const Login = (props) => {
       }
 
       let data = await res.json();
-      console.log(`Data: ${data}`);
-      console.log(`Token: ${data.token}`);
-      console.log(`Message: ${data.message}`);
-      console.log(`User: ${data.user}`);
 
       props.updateToken(data.sessionToken);
     } catch (err) {
