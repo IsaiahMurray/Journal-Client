@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: 0,
     marginTop: '10%',
+    // fontFamily: 'Playball',
   },
   signupFields: {
     height: "100%",
@@ -67,12 +68,12 @@ const Auth = (props) => {
   const signupFields = () =>
     !login ? (
       <Grid id="login-signup" item className={classes.signupFields}>
-        <h2 className={classes.title}>{title()}</h2>
+        <h1 className={classes.title}>{title()}</h1>
         <Signup updateToken={props.updateToken} />
       </Grid>
     ) : (
       <Grid id="login-signup" item className={classes.signupFields}>
-        <h2 className={classes.title}>{title()}</h2>
+        <h1 className={classes.title}>{title()}</h1>
         <Login updateToken={props.updateToken} />
       </Grid>
     );
