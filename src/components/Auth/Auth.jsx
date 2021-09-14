@@ -29,13 +29,13 @@ const useStyles = makeStyles((theme) => ({
     },
     //* Tablet/Desktop
     [theme.breakpoints.up("md")]: {
-      width: "30vw",
-      height: "80vh",
+      width: "400px",
+      height: "450px",
     },
     //* Desktop and higher
     [theme.breakpoints.up("lg")]: {
-      width: "30vw",
-      height: "80vh",
+      width: "400px",
+      height: "450px",
     }
   },
   title: {
