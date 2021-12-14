@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     marginTop: "10px",
-
+    fontFamily: "'Dancing Script', cursive;", 
       //* Mobile
       [theme.breakpoints.down("sm")]: {
         marginTop: "20px",
@@ -217,7 +217,7 @@ const Auth = (props) => {
                 variant="contained"
                 color="primary"
               >
-                 {login ? "Login" : "Register"}
+                 Submit
               </Button>
             </form>
           </div>
