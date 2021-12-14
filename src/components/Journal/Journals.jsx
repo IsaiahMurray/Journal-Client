@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import Button from "@material-ui/core/Button";
 import Journal from "./Journal";
-//import JournalCreate from "./JournalCreate";
+import JournalCreate from "./JournalCreate";
 
 //import APIURL from '../../helpers/environment';
 
@@ -33,12 +33,6 @@ const Journals = (props) => {
     `${APIURL}/journal/mine`
   );
 
-  // useEffect(() => {
-  //   console.log("props:", props)
-  //   props.fetchJournals();
-  //   //eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);
-
   let buttonView;
 
   if (fetchUrl === `${APIURL}/journal/mine`) {
@@ -53,6 +47,7 @@ const Journals = (props) => {
 
   return (
     <div className={classes.root}>
+      <JournalCreate token={props.token} fetchJournals={props.fetchJournals}/>
         <GridList cellheight={250} className={classes.gridList}>
           {buttonView}
           {props.journalArray.map((journal) => (

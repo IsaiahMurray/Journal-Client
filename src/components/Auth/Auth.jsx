@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import Signup from "./Signup";
-import Login from "./Login";
-
 import {
   Container,
   TextField,
@@ -11,6 +8,7 @@ import {
 } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import { Alert } from "@material-ui/lab";
+
 const useStyles = makeStyles((theme) => ({
   grid: {
     justifyContent: "center",
@@ -38,6 +36,12 @@ const useStyles = makeStyles((theme) => ({
       borderRadius: "0%",
       boxShadow: "0px 0px 0px white",
       border: "2px solid white",
+    },
+    [theme.breakpoints.down("md")]: {
+      width: "400px",
+      height: "450px",
+      border: "2px solid #3f51b5",
+      borderRadius: "10%",
     },
     //* Tablet/Desktop
     [theme.breakpoints.up("md")]: {
@@ -118,7 +122,6 @@ const Auth = (props) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("Auth button hit");
     try {
       let res = await fetch(`${APIURL}`, {
         method: "POST",
