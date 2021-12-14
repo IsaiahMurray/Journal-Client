@@ -1,5 +1,7 @@
 .App {
   text-align: center;
-  background-color: #121212;
+  background-image: url('./components/assets/photo-1452421822248-d4c2b47f0c81.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
