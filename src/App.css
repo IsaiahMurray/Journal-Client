@@ -1,3 +1,9 @@
 .App {
 color: snow;
 }
+
+h1{
+  font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  font-weight: 100;
+}
