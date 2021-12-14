@@ -75,7 +75,6 @@ const JournalDisplay = (props) => {
 
   return (
     <div>
-      <JounalCreate fetchJournals={fetchJournals} token={props.token} />
       <Journals
         fetchJournals={fetchJournals}
         updateJournal={updateJournal}
