@@ -53,7 +53,7 @@ const Journals = (props) => {
 
   return (
     <div className={classes.root}>
-        <GridList cellHeight={250} className={classes.gridList}>
+        <GridList cellheight={250} className={classes.gridList}>
           {buttonView}
           {props.journalArray.map((journal) => (
             <Journal journal={journal} updateJournal={props.updateJournal} deleteJournal={props.deleteJournal} fetchJournals={props.fetchJournals}/>

@@ -49,11 +49,15 @@ const App = () => {
   const protectedViews = () => {
 
     return (sessionToken ? <Display updateToken={updateToken} clickLogout={clearToken} token={sessionToken}/>
-    : <Auth updateToken={updateToken}/>)
+    : 
+    <>
+    <h1 className={classes.welcome}>Welcome to your Journal!</h1>
+    <Auth updateToken={updateToken}/>
+    </>
+    )
   }
   return (
     <div className={classes.app}>
-      <h1 className={classes.welcome}>Welcome to your Journal!</h1>
      {protectedViews()}
     </div>
   );
