@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Auth from './components/Auth/Auth';
 import Display from './components/Display';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
 
 function App() {
   const [sessionToken, setSessionToken] = useState(null); 
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => { 
     if(localStorage.getItem('token')){
       setSessionToken(localStorage.getItem('token'));
@@ -32,9 +30,8 @@ function App() {
   }
   return (
     <div className="App">
-     {/* <Nav clickLogout={clearToken}/> */}
+      <h1>Welcome to your Journal!</h1>
      {protectedViews()}
-     <Footer />
     </div>
   );
 }
