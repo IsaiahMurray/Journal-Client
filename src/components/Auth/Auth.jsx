@@ -37,11 +37,11 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: "0px 0px 0px white",
       border: "2px solid white",
     },
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.up("sm")]: {
       width: "400px",
       height: "450px",
-      border: "2px solid #3f51b5",
       borderRadius: "10%",
+      border: "2px solid #3f51b5",
     },
     //* Tablet/Desktop
     [theme.breakpoints.up("md")]: {

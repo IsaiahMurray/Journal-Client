@@ -13,6 +13,9 @@ import Container from "@material-ui/core/Container";
 let APIURL = 'https://ism-journal-server.herokuapp.com';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "white"
+  },
   input: {
     width: "90%",
   },
@@ -89,7 +92,7 @@ const JournalCreate = (props) => {
   };
 
   return (
-    <div>
+    <div className={classes.root}>
       <Button
         variant="outlined"
         color="primary"

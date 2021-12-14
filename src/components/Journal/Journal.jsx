@@ -15,6 +15,7 @@ import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 
 import images from "../Images";
+import jouranlImg from '../assets/photo-1452421822248-d4c2b47f0c81.jpg'
 import JournalUpdate from "./JournalUpdate";
 import JournalDelete from "./JournalDelete";
 
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
@@ -38,15 +40,22 @@ const useStyles = makeStyles((theme) => ({
   root: {
     height: "90vh",
     width: "50vw",
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+    },
   },
   media: {
     height: "10vh",
     width: "50vw",
     objectFit: "cover",
+    [theme.breakpoints.down("sm")]: {
+      width: "100vw",
+    },
   },
-  buttons: {},
+  buttons: {
+  },
   entry: {
-    height: "65vh",
+    height: "60vh",
     top: 0,
   },
   fab: {
@@ -72,6 +81,7 @@ const Journal = (props) => {
   };
 
   return (
+    <>
     <GridListTile
       className={classes.grid}
       cellHeight={250}
@@ -109,7 +119,7 @@ const Journal = (props) => {
             <CardActionArea>
               <img
                 className={classes.media}
-                src="https://image.freepik.com/free-photo/background-letterpress-wood-type-printing-blocks-random-letters-alphabet_9635-35.jpg"
+                src={jouranlImg}
                 alt="Random Letters"
               />
               <CardContent className={classes.entry}>
@@ -143,6 +153,7 @@ const Journal = (props) => {
         </Fade>
       </Modal>
     </GridListTile>
+    </>
   );
 };
 

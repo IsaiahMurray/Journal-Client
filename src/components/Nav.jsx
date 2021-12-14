@@ -7,10 +7,20 @@ const useStyles = makeStyles((theme) => ({
   logout: {
     border: "1px solid white",
     color: "white",
-    marginLeft: "70%"
+    marginLeft: "70%",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "45%"
+    },
   },
   title: {
-    marginLeft: "50px"
+    marginLeft: "-15vw",
+    width: "40vw",
+    [theme.breakpoints.down("sm")]: {
+      marginLeft: "4vw"
+    },
+    [theme.breakpoints.down("md")]: {
+      marginLeft: "-5vw"
+    },
   },
   root: {
     flexGrow: 1,
