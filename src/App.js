@@ -27,9 +27,7 @@ function App() {
 
   const protectedViews = () => {
 
-    const authorized = sessionToken;
-
-    return (authorized ? <Display updateToken={updateToken} clickLogout={clearToken} token={sessionToken}/>
+    return (sessionToken ? <Display updateToken={updateToken} clickLogout={clearToken} token={sessionToken}/>
     : <Auth updateToken={updateToken}/>)
   }
   return (

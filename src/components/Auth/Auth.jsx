@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     marginTop: "10vh",
     boxShadow: "5px 5px 10px grey",
+    backgroundColor: '#1f1f1f',
+    border: "2px solid #3f51b5",
+
 
     //! Styling alterations for screen breakpoints
     //* Mobile
@@ -41,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
   title: {
     marginBottom: 0,
     marginTop: '10%',
+    color: "#3f51b5"
     // fontFamily: 'Playball',
   },
   signupFields: {
