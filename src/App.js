@@ -32,8 +32,9 @@ const App = () => {
   useEffect(() => { 
     if(localStorage.getItem('token')){
       setSessionToken(localStorage.getItem('token'));
+    }else{
+      clearToken();
     }
-    clearToken();
   }, [])
 
   const updateToken = (newToken) => { 
