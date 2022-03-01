@@ -9,6 +9,8 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { Alert } from "@material-ui/lab";
 
+import APIURL from "../../helpers/environment"
+
 const useStyles = makeStyles((theme) => ({
   grid: {
     justifyContent: "center",
@@ -118,12 +120,12 @@ const Auth = (props) => {
   };
 
 
-  let APIURL = !login ? "https://ism-journal-server.herokuapp.com/user/register" :"https://ism-journal-server.herokuapp.com/user/login" ;
+  let url = !login ? `${APIURL}/user/register`:`${APIURL}/user/login`;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      let res = await fetch(`${APIURL}`, {
+      let res = await fetch(`${url}`, {
         method: "POST",
         body: JSON.stringify({ email: email, name: name, password: password }),
         headers: new Headers({

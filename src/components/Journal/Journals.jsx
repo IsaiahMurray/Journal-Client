@@ -5,9 +5,7 @@ import Button from "@material-ui/core/Button";
 import Journal from "./Journal";
 import JournalCreate from "./JournalCreate";
 
-//import APIURL from '../../helpers/environment';
-
-let APIURL = "https://ism-journal-server.herokuapp.com";
+import APIURL from '../../helpers/environment';
 
 const useStyles = makeStyles((theme) => ({
   root: {

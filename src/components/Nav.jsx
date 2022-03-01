@@ -38,7 +38,6 @@ const Nav = (props) => {
 const classes = useStyles();
 
 const logout = () => {
-  console.log("Logout button clicked");
   props.clickLogout();
 }
 
