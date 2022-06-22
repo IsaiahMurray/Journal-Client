@@ -5,11 +5,8 @@ import APIURL from '../../helpers/environment';
 
 const JournalDisplay = (props) => {
   const [journalArray, setJournalArray] = useState([]);
-  const [fetchUrl, setFetchUrl] = useState();
 
   useEffect(() => {
-    console.log("Loading component");
-    console.log(props.token)
     fetchJournals();
   }, [])
 

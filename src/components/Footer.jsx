@@ -1,6 +1,6 @@
 function Footer(){
     return(
-        <div id="footer">Footer</div>
+        <div id="footer">Ism Journal 2021</div>
     )
 }
 export default Footer;

@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   const [sessionToken, setSessionToken] = useState(null); 
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
   useEffect(() => { 
     if(localStorage.getItem('token')){
