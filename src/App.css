@@ -3,3 +3,20 @@ h1 {
   font-size: 50px;
   font-weight: 100;
 }
+.app{
+  background-image: url('./components/assets/photo-1452421822248-d4c2b47f0c81.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+}
+
+#footer{
+  margin-top: 120px;
+  color: snow;
+}
+
+@media only screen and (max-width: 600px) {
+  #footer{
+    margin-top: 10px;
+  }
+}

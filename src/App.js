@@ -2,12 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import Auth from './components/Auth/Auth';
 import Display from './components/Display';
+import Footer from './components/Footer';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
-  app: {
-    color: "snow"
-  },
   welcome: {
     margin: "0px",
      marginBottom: "-20px",
@@ -58,8 +56,9 @@ const App = () => {
     )
   }
   return (
-    <div className={classes.app}>
+    <div className="app">
      {protectedViews()}
+     <Footer/>
     </div>
   );
 }
